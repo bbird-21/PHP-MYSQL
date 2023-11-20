@@ -1,4 +1,5 @@
 <?php
+// variables.php
 
 $users = [
     [
@@ -44,32 +45,3 @@ $recipes = [
         'is_enabled' => false,
     ],
 ];
-
-function    isValidRecipe( array $recipes ) : bool {
-
-    if ( array_key_exists('is_enabled', $recipes) ) {
-        return ($recipes['is_enabled']);
-    }
-    return (false);
-}
-
-function    correspondingMail( array $recipe ) : string
-{
-    global  $users;
-    foreach ( $users as $user ) {
-        if ( $user['email'] == $recipe['author'] )
-            return $user['full_name'];
-    }
-}
-
-
-foreach ($recipes as $recipe ) {
-    if ( isValidRecipe($recipe) ) {
-        $name = correspondingMail($recipe);
-        echo $recipe['title'];
-        echo $name;
-    }
-}
-
-
-?>
