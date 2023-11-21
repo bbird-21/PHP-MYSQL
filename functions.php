@@ -34,3 +34,14 @@ function getRecipes(array $recipes) : array
 
     return $validRecipes;
 }
+
+function checkForm( array $users, array $POST )
+{
+    if ( !isset($_POST['email']) || !isset($_POST['password']) )
+        return ;
+    foreach( $users as $user ) {
+        if ( $user['email'] == $_POST['email'] && $user['password'] == $_POST['password'] ) {
+            $_SESSION['LOGGED_USER'] = $user['full_name'];
+        }
+    }
+}

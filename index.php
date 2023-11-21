@@ -12,29 +12,9 @@
     >
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <a href="bonjour.php?nom=Dupont&amp;prenom=Jean">Dis-moi bonjour !</a>
-    <div class="container">
 
     <?php include_once('header.php'); ?>
-        <h1>Site de recettes</h1>
-
-        <!-- inclusion des variables et fonctions -->
-        <?php
-            include_once('variables.php');
-            include_once('functions.php');
-        ?>
-
-        <!-- inclusion de l'entête du site -->
-        <?php include_once('header.php'); ?>
-        
-        <?php foreach(getRecipes($recipes) as $recipe) : ?>
-            <article>
-                <h3><?php echo $recipe['title']; ?></h3>
-                <div><?php echo $recipe['recipe']; ?></div>
-                <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
-            </article>
-        <?php endforeach ?>
-    </div>
+    <h1>Site de recettes</h1>
     <div>
         <h3><a target="_blank" href="contact.php">Contact  </a> </h3>
     </div>
